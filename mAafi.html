@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Please Forgive Me LAYTOOOKA ❤️</title>
+    <style>
+        body {
+            background: #678DC6;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 120px;
+        }
+
+        h1 {
+            font-size: 35px;
+        }
+
+        #message {
+            font-size: 22px;
+            margin: 20px;
+            color: #A9A9A9;
+        }
+
+        #extra {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #A9A9A9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Please Forgive Me 🥺</h1>
+    <div id="message">I am really sorry...</div>
+    <div id="extra"></div>
+
+    <button id="yes" onclick="forgiven()">Yes 💕</button>
+    <button id="no" onclick="tryAgain()">No 😢</button>
+    <script>
+        const messages = [
+            "🥺",
+            "Latikaaaaa You mean so much to me ❤️",
+            "Darlingggggg I cant lose you 😔",
+            "Latiiiuuuu Im really sorry 😭", 
+            "I accept I streched it khupp jasta. Maaf kr mala pleaseee 🥺",
+            "Latikaaa mla nko sodun jaus 😢",
+            "Dont take a Break from me 😖",
+        ];
+
+        let noCount = 0;
+let yesSize = 18; // initial font size in px
+
+function tryAgain() {
+    noCount++;
+
+    // Show a random message
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById("message").innerText = messages[randomIndex];
+
+    // Grow Yes button every No click
+    const yesBtn = document.getElementById("yes");
+    yesSize += 5;
+    yesBtn.style.fontSize = yesSize + "px";
+    yesBtn.style.padding = (yesSize / 1.5) + "px " + (yesSize * 2 / 1.5) + "px";
+
+    // After 5 No clicks, show paragraph and remove No button completely
+    if (noCount >= 5) {
+        document.getElementById("extra").innerText =
+                    "Darlinggggg aik na shant ho na tuch ek better feel karavte" +
+                    "mala majhya daily life mdhe mala mhitiy mi tula khup trasss " +
+                    "dila i am sorry kharach mi majhya possessiveness mdhe tujha rest cha bghitla nhi " +
+                    "Sorry Darlinggggg 💔🥺"+
+                    "Nhi sahan honar tu sodun geleli please thamb naa pleaseee."+
+                    "Khup trass hotoy ik deserved this but latikaaa pleaseee"+
+                    "Mi nhi imagine kelay LDR without you fakt LDR nhi bki life"+
+                    "without you v4 krun pn jaam stress hotoy Darlinggggg pleaseee come back."+
+                    "Ik tired ahes mla but majha prem ahech tasa tujhyasathi."+
+                    "Darlinggggg I love you so bad ahe posessive tujhya sathi sobat astana kelela control"+
+                    "LDR mdhe it came again tasa bghun i trust you darlingggg te scene nhiye but i think distance trigger kela hai parat"+
+                    "Mi kelela majha extra posessiveness control tevha sorry ata trigger zala and tula trass zala"+
+                    "Ik tula khup exhaust krto mi roj not aajch fakt but darlinggggg I love you khuppp KHHUUUPPP JASTAAAAAH"+
+                    "SORRY LATIKAAAA MY MALKIN MY DARLINGGGGGG PLEASE FORGIVE ME 🥺💔";
+    
+        const noBtn = document.getElementById("no");
+        noBtn.remove(); // completely remove the No button from the page
+    }
+}
+
+        function forgiven() {
+            document.body.innerHTML =
+                "<h1>I LOVE YOUUUUU SOOOO MUCHHHHHHH MOREEEEEEEE I WONT REPEAT THIS AGAIN ❤️🥰</h1>";
+        }
+
+        function moveNoButton() {
+    const noBtn = document.getElementById("no");
+    const bodyWidth = window.innerWidth - noBtn.offsetWidth - 20; // 20px padding
+    const bodyHeight = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const randomX = Math.floor(Math.random() * bodyWidth);
+    const randomY = Math.floor(Math.random() * bodyHeight);
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+    
+    </script>
+
+</body>
+</html>
